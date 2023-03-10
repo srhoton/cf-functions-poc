@@ -1,0 +1,6 @@
+function handler(event) { 
+    var request = event.request;
+    var subdomains = request.headers.host.value.split('.');
+    request.uri = '/' + subdomains[0] + '/index.html';
+    return request;
+}
